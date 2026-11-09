@@ -620,7 +620,8 @@
                     manifest.schoolField = manifest.schoolField || 'Sekolah';
                 } catch (e) {
                     console.error(e);
-                    $('templateList').innerHTML = '<p class="note">Could not load templates/manifest.json. Open this page through GitHub Pages or a local server (not by double-clicking the file).</p>';
+                    const url = new URL('templates/manifest.json', location.href).href;
+                    $('templateList').innerHTML = '<p class="note">Could not load <code>' + esc(url) + '</code><br>Reason: ' + esc(e.message || e) + '<br>Check that the templates folder is in the repository next to index.html (folder and file names are case-sensitive on GitHub Pages), and that the page is opened via GitHub Pages or a local server, not by double-clicking the file.</p>';
                     msg('Could not load manifest.json.', true);
                     return;
                 }
@@ -654,7 +655,7 @@
                         });
                     } catch (e) {
                         console.error(e);
-                        failed.push(entry.file);
+                        failed.push(entry.file + ' (' + (e.message || e) + ')');
                     }
                 }
 
