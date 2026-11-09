@@ -612,8 +612,8 @@
 
             async function loadTemplates() {
                 msg('Loading templates…');
+                const stamp = Date.now();
                 try {
-                    const stamp = Date.now();
                     const res = await fetch('templates/manifest.json?v=' + stamp, { cache: 'no-store' });
                     if (!res.ok) throw new Error('manifest.json: HTTP ' + res.status);
                     manifest = await res.json();
