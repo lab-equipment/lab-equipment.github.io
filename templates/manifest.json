@@ -1,1 +1,9 @@
-
+{
+  "schoolField": "Sekolah",
+  "templates": [
+    { "file": "invoice-lab.xlsx",      "label": "Invoice Lab",      "refField": "Nombor Invois" },
+    { "file": "quotation-lab.xlsx",    "label": "Quotation Lab",    "refField": "Nombor Rujukan Sebutharga Lab" },
+    { "file": "quotation-sepadu.xlsx", "label": "Quotation Sepadu", "refField": "Nombor Rujukan Sebutharga Sepadu" },
+    { "file": "quotation-arif.xlsx",   "label": "Quotation Arif",   "refField": "Nombor Rujukan Sebutharga Arif" }
+  ]
+}
